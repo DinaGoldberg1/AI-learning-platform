@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\כללי\\LearningPlatform\\BLL\\BLL.csproj": {}
+    "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\BLL\\BLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\כללי\\LearningPlatform\\BLL\\BLL.csproj": {
+    "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\כללי\\LearningPlatform\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\User\\Documents\\כללי\\LearningPlatform\\BLL\\BLL.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\BLL\\BLL.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\כללי\\LearningPlatform\\BLL\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\User\\Documents\\כללי\\LearningPlatform\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\User\\Documents\\כללי\\LearningPlatform\\DAL\\DAL.csproj"
+              "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj"
               }
             }
           }
@@ -64,6 +64,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.6, )"
+            },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             }
           },
           "imports": [
@@ -86,14 +90,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Documents\\כללי\\LearningPlatform\\DAL\\DAL.csproj": {
+    "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\כללי\\LearningPlatform\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\User\\Documents\\כללי\\LearningPlatform\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\כללי\\LearningPlatform\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -142,6 +146,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             }
           },
           "imports": [
