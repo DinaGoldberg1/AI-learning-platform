@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Dashboard: React.FC = () => {
-    const [users, setUsers] = useState([]);
-
-    useEffect(() => {
-        const fetchUsers = async () => {
-            const response = await axios.get('http://localhost:7194/api/users');
-            setUsers(response.data);
-        };
-        fetchUsers();
-    }, []);
+    const location = useLocation();
+    const user = location.state.user;
 
     return (
         <div>
-            {users.map(user => (
-                <div key={user.id}>{user.name}</div>
-            ))}
+            <h1>Hello, {user.name}!</h1>
         </div>
     );
 };
+
 export default Dashboard;
