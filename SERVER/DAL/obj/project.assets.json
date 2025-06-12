@@ -3008,11 +3008,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

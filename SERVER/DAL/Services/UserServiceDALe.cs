@@ -16,7 +16,7 @@ namespace DAL.Services
         public async Task AddAsync(User user)
         {
             _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+           await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(User user)
@@ -38,6 +38,10 @@ namespace DAL.Services
         public async Task<User?> GetByUserIdAsync(string userId)
         {
             return await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+        }
+        public async Task<User?> GetByNameAndPhoneAsync(string name,string phone)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Name.Equals(name)&&u.Phone.Equals(phone));
         }
 
         public async Task UpdateAsync(User user)

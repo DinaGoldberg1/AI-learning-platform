@@ -40,5 +40,16 @@ namespace DAL.Services
             _context.Prompts.Update(prompt);
             await _context.SaveChangesAsync();
         }
+        public async Task<List<Prompt>> GetAllPromptsAsync()
+        {
+            return await _context.Prompts.ToListAsync();
+        }
+
+        public async Task<List<Prompt>> GetUserHistoryAsync(string userId)
+        {
+            return await _context.Prompts
+                .Where(prompt => prompt.UserId.Equals(userId))
+                .ToListAsync();
+        }
     }
 }

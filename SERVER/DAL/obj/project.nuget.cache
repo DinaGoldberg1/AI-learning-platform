@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JXV3dmvajiE=",
+  "dgSpecHash": "WufFhKQzWz8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

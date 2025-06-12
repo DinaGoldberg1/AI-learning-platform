@@ -9,5 +9,7 @@ namespace DAL.API
         Task<List<Prompt>> GetAllAsync();
         Task<Prompt?> GetByIdAsync(int id);
         Task UpdateAsync(Prompt prompt);
+        Task<List<Prompt>> GetUserHistoryAsync(string userId);
+        Task<List<Prompt>> GetAllPromptsAsync();
     }
 }

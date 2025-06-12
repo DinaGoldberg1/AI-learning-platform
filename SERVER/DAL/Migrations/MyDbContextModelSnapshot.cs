@@ -64,7 +64,11 @@ namespace DAL.Migrations
                     b.Property<int>("SubCategoryId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("UserId")
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("UserId1")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -73,7 +77,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("SubCategoryId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId1");
 
                     b.ToTable("Prompts");
                 });
@@ -141,7 +145,7 @@ namespace DAL.Migrations
 
                     b.HasOne("DAL.Models.User", "User")
                         .WithMany("Prompts")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("UserId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

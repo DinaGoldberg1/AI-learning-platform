@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DAL.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20250610205221_InitialCreate")]
+    [Migration("20250612215330_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -67,7 +67,11 @@ namespace DAL.Migrations
                     b.Property<int>("SubCategoryId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("UserId")
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("UserId1")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -76,7 +80,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("SubCategoryId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId1");
 
                     b.ToTable("Prompts");
                 });
@@ -119,6 +123,10 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
@@ -140,7 +148,7 @@ namespace DAL.Migrations
 
                     b.HasOne("DAL.Models.User", "User")
                         .WithMany("Prompts")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("UserId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -19,7 +19,7 @@ namespace DAL.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=LearningPlatformDB;Username=postgres;Password=data4195");
+                optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=AiPlatformDB;Username=postgres;Password=data4195");
             }
         }
 
