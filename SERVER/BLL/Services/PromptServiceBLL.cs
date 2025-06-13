@@ -32,17 +32,6 @@ namespace BLL.Services
             return prompt == null ? null : _mapper.Map<PromptDTO>(prompt);
         }
 
-        public async Task<string> ProcessPromptAsync(PromptDTO promptDto, int userId)
-        {
-            var prompt = _mapper.Map<Prompt>(promptDto);
-            prompt.UserId = userId;
-            var response = await SendPromptToAI(promptDto.PromptText);
-            prompt.Response = response;
-
-            await _promptServiceDAL.AddAsync(prompt);
-            return response;
-        }
-
         public async Task<List<PromptDTO>> GetUserHistoryAsync(int userId)
         {
             var prompts = await _promptServiceDAL.GetUserHistoryAsync(userId);
@@ -52,6 +41,16 @@ namespace BLL.Services
                 Response = p.Response,
                 CreatedAt = p.CreatedAt
             }).ToList();
+        }
+        public async Task<string> ProcessPromptAsync(PromptDTO promptDto, int userId)
+        {
+            var prompt = _mapper.Map<Prompt>(promptDto);
+            prompt.UserId = userId;
+            var response = await SendPromptToAI(promptDto.PromptText);
+            prompt.Response = response;
+
+            await _promptServiceDAL.AddAsync(prompt);
+            return response;
         }
 
 
