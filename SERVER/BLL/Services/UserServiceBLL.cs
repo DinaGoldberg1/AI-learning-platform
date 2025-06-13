@@ -34,7 +34,11 @@ namespace BLL.Services
             var user = await _userServiceDAL.GetByUserIdAsync(userId);
             return user == null ? null : _mapper.Map<UserDTO>(user);
         }
-
+        public async Task<UserDTO?> GetByNameAndPhoneAsync(UserDTO userDTO)
+        {
+            var user = await _userServiceDAL.GetByNameAndPhoneAsync(userDTO.Name,userDTO.Phone);
+            return user == null ? null : _mapper.Map<UserDTO>(user);
+        }
         public async Task<UserDTO> CreateAsync(UserDTO userDto)
         {
             var user = _mapper.Map<User>(userDto);

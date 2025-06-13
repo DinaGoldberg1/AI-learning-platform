@@ -1,4 +1,4 @@
-using AutoMapper; 
+using AutoMapper;
 using BLL;
 using BLL.API;
 using BLL.Services;
@@ -7,7 +7,6 @@ using DAL.Models;
 using DAL.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,8 +14,17 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<MyDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddAutoMapper(typeof(MappingProfile)); 
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+// הוספת מדיניות CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder.WithOrigins("http://localhost:3000")
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+});
 
 builder.Services.AddScoped<ISubCategoryServiceBLL, SubCategoryServiceBLL>();
 builder.Services.AddScoped<ISubCategoryServiceDAL, SubCategoryServiceDAL>();
@@ -40,6 +48,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// הוספת CORS לפני Authorization
+app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthorization();
 
