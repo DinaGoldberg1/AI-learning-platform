@@ -1,5 +1,6 @@
 ﻿using BLL.API;
 using BLL.DTOs;
+using BLL.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -32,9 +33,9 @@ namespace API.Controllers
         }
 
         [HttpPost("process prompt")]
-        public async Task<IActionResult> ProcessPrompt([FromBody] PromptDTO promptDto)
+        public async Task<IActionResult> CreatePrompt([FromBody] PromptDTO promptDto, [FromQuery] int userId)
         {
-            var response = await _promptService.ProcessPromptAsync(promptDto);
+            var response = await _promptService.ProcessPromptAsync(promptDto, userId);
             return Ok(response);
         }
 

@@ -49,7 +49,7 @@ namespace DAL.Services
         {
             return await _context.Prompts
                 .Where(prompt => prompt.UserId == userId)
-                .OrderByDescending(prompt => prompt.CreatedAt) 
+                .OrderByDescending(prompt => prompt.CreatedAt)
                 .ToListAsync();
         }
 

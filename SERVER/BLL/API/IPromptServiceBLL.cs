@@ -7,7 +7,7 @@ namespace BLL.API
         Task<bool> DeleteAsync(int id);
         Task<List<PromptDTO>> GetAllAsync();
         Task<PromptDTO?> GetByIdAsync(int id);
-        Task<string> ProcessPromptAsync(PromptDTO promptDto);
+        Task<string> ProcessPromptAsync(PromptDTO promptDto, int userId);
         Task<List<PromptDTO>> GetUserHistoryAsync(int userId);
         Task<bool> UpdateAsync(int id, PromptDTO promptDto);
     }

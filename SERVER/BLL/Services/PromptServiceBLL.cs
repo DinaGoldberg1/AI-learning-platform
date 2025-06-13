@@ -32,13 +32,14 @@ namespace BLL.Services
             return prompt == null ? null : _mapper.Map<PromptDTO>(prompt);
         }
 
-        public async Task<string> ProcessPromptAsync(PromptDTO promptDto)
+        public async Task<string> ProcessPromptAsync(PromptDTO promptDto, int userId)
         {
-            var prompt=_mapper.Map<Prompt>(promptDto);
+            var prompt = _mapper.Map<Prompt>(promptDto);
+            prompt.UserId = userId;
             var response = await SendPromptToAI(promptDto.PromptText);
             prompt.Response = response;
 
-            await _promptServiceDAL.AddAsync(prompt); 
+            await _promptServiceDAL.AddAsync(prompt);
             return response;
         }
 
@@ -56,9 +57,10 @@ namespace BLL.Services
 
         private async Task<string> SendPromptToAI(string promptText)
         {
+            var API_KEY = "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";
             using (var client = new HttpClient())
             {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "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");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", API_KEY);
 
                 var payload = new
                 {
