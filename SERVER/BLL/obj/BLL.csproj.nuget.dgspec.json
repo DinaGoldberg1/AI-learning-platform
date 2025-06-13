@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\BLL\\BLL.csproj": {}
+    "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\BLL\\BLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\BLL\\BLL.csproj": {
+    "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\BLL\\BLL.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\BLL\\BLL.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\BLL\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj"
+              "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\DAL\\DAL.csproj"
               }
             }
           }
@@ -65,6 +65,10 @@
               "target": "Package",
               "version": "[9.0.6, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "OpenAI": {
               "target": "Package",
               "version": "[2.1.0, )"
@@ -90,14 +94,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj": {
+    "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\פרקטיקום\\פרויקט פלטפורמת למידה\\LearningPlatform\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\הנדסאים שנה ב\\פרויקט\\AI-learning-platform\\SERVER\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

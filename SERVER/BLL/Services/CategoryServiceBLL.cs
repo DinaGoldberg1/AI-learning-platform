@@ -54,7 +54,7 @@ namespace BLL.Services
             await _categoryServiceDAL.DeleteAsync(category);
             return true;
         }
-        public async Task<List<SubCategoryDTO>> GetByCategoryIdAsync(int categoryId)
+        public async Task<List<SubCategoryDTO>> GetSubCategoriesByIdAsync(int categoryId)
         {
             var subCategories = await _subcCtegoryServiceDAL.GetByCategoryId(categoryId); 
             return subCategories.Select(sc => _mapper.Map<SubCategoryDTO>(sc)).ToList();

@@ -32,12 +32,13 @@ namespace API.Controllers
                 return NotFound();
             return Ok(category);
         }
-        //[HttpGet("{id}/subcategories")]
-        //public async Task<ActionResult<List<SubCategoryDTO>>> GetSubCategoriesByCategoryId(int id)
-        //{
-        //    var subCategories = await _subCategoryService.GetByCategoryIdAsync(id);
-        //    return Ok(subCategories);
-        //}
+
+        [HttpGet("{id}/subcategories")]
+        public async Task<ActionResult<List<SubCategoryDTO>>> GetSubCategoriesByCategoryId(int id)
+        {
+            var subCategories = await _categoryService.GetSubCategoriesByIdAsync(id);
+            return Ok(subCategories);
+        }
 
         [HttpPost]
         public async Task<ActionResult<CategoryDTO>> CreateCategory(CategoryDTO categoryDto)

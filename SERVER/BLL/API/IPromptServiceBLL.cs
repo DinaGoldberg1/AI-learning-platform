@@ -4,10 +4,11 @@ namespace BLL.API
 {
     public interface IPromptServiceBLL
     {
-        Task<PromptDTO> CreateAsync(PromptDTO promptDto);
         Task<bool> DeleteAsync(int id);
         Task<List<PromptDTO>> GetAllAsync();
         Task<PromptDTO?> GetByIdAsync(int id);
+        Task<string> ProcessPromptAsync(PromptDTO promptDto);
+        Task<List<PromptDTO>> GetUserHistoryAsync(int userId);
         Task<bool> UpdateAsync(int id, PromptDTO promptDto);
     }
 }

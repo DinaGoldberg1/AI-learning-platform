@@ -45,11 +45,13 @@ namespace DAL.Services
             return await _context.Prompts.ToListAsync();
         }
 
-        public async Task<List<Prompt>> GetUserHistoryAsync(string userId)
+        public async Task<List<Prompt>> GetUserHistoryAsync(int userId)
         {
             return await _context.Prompts
-                .Where(prompt => prompt.UserId.Equals(userId))
+                .Where(prompt => prompt.UserId == userId)
+                .OrderByDescending(prompt => prompt.CreatedAt) 
                 .ToListAsync();
         }
+
     }
 }

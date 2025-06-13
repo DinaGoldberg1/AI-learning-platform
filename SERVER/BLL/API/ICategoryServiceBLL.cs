@@ -5,7 +5,7 @@ namespace BLL.API
     public interface ICategoryServiceBLL
     {
         Task<CategoryDTO> CreateAsync(CategoryDTO categoryDto);
-        Task<List<SubCategoryDTO>> GetByCategoryIdAsync(int categoryId);
+        Task<List<SubCategoryDTO>> GetSubCategoriesByIdAsync(int categoryId);
         Task<bool> DeleteAsync(int id);
         Task<List<CategoryDTO>> GetAllAsync();
         Task<CategoryDTO?> GetByIdAsync(int id);

@@ -23,7 +23,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<PromptDTO>> GetPrompt(int id)
+        public async Task<ActionResult<PromptDTO>> GetPromptById(int id)
         {
             var prompt = await _promptService.GetByIdAsync(id);
             if (prompt == null)
@@ -31,12 +31,20 @@ namespace API.Controllers
             return Ok(prompt);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<PromptDTO>> CreatePrompt(PromptDTO promptDto)
+        [HttpPost("process prompt")]
+        public async Task<IActionResult> ProcessPrompt([FromBody] PromptDTO promptDto)
         {
-            var createdPrompt = await _promptService.CreateAsync(promptDto);
-            return CreatedAtAction(nameof(GetPrompt), new { id = createdPrompt.Id }, createdPrompt);
+            var response = await _promptService.ProcessPromptAsync(promptDto);
+            return Ok(response);
         }
+
+        [HttpGet("history")]
+        public async Task<IActionResult> GetUserHistory([FromQuery] int userId)
+        {
+            var history = await _promptService.GetUserHistoryAsync(userId);
+            return Ok(history);
+        }
+
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdatePrompt(int id, PromptDTO promptDto)
