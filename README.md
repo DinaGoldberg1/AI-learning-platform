@@ -85,7 +85,7 @@ volumes:
 1. Ensure your connection string in `appsettings.json` is set correctly:
    ```json
    "ConnectionStrings": {
-     "DefaultConnection": ""Host=localhost;Port=5432;Database=AIPlatformData;Username=postgres;Password=data4195""
+     "DefaultConnection": "Host=localhost;Port=5432;Database=AIPlatformData;Username=postgres;Password=data4195"
    }
    ```
 
