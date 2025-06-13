@@ -10,6 +10,7 @@ const Dashboard: React.FC = () => {
     const [categories, setCategories] = useState<any[]>([]);
     const [subCategories, setSubCategories] = useState<any[]>([]);
     const [selectedSubCategory, setSelectedSubCategory] = useState<number | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
     const [userInput, setUserInput] = useState<string>('');
     const [response, setResponse] = useState<string>('');
 
@@ -27,6 +28,7 @@ const Dashboard: React.FC = () => {
     }, []);
 
     const handleSubCategoryClick = async (categoryId: number) => {
+        setSelectedCategory(categoryId);
         try {
             const response = await axios.get(`https://localhost:7194/api/Category/${categoryId}/subcategories`);
             setSubCategories(response.data);
@@ -36,13 +38,34 @@ const Dashboard: React.FC = () => {
     };
 
     const handlePromptSubmit = async () => {
-        if (selectedSubCategory !== null) {
+        if (selectedSubCategory !== null && userInput.trim() !== '') {
             try {
-                const response = await axios.post(`https://localhost:7194/api/Prompt/process prompt`, { prompt: userInput }, { params: { userId: user.id } });
+                const promptDto = {
+                    userId: user.id,
+                    categoryId: selectedCategory,
+                    SubCategoryId: selectedSubCategory,
+                    PromptText: userInput,
+                    Response: "",
+                    CreatedAt: new Date().toISOString(),
+                };
+
+                const response = await axios.post(
+                    `https://localhost:7194/api/Prompt/process prompt`,
+                    promptDto,
+                    {
+                        headers: {
+                            'Content-Type': 'application/json',
+                        }
+                    }
+                );
+
                 setResponse(response.data);
             } catch (error) {
                 console.error('Error processing prompt:', error);
+                setResponse('Error processing prompt. Please check your connection or try again later.');
             }
+        } else {
+            setResponse('Please select a subcategory and enter a question before submitting.');
         }
     };
 
@@ -57,7 +80,7 @@ const Dashboard: React.FC = () => {
                             className="btn"
                             style={{
                                 width: '100%',
-                                backgroundColor: `hsl(${index * 60}, 70%, 70%)`, // 
+                                backgroundColor: `hsl(${210 + index * 10}, 70%, 70%)`, // גווני כחול-תכלת
                                 height: '100px',
                                 fontSize: '18px'
                             }}
@@ -73,8 +96,8 @@ const Dashboard: React.FC = () => {
                     <h3>Select a Subcategory:</h3>
                     <div className="row">
                         {subCategories.map(subCategory => (
-                            <div className="col-md-4 mb-3" key={subCategory.id}>
-                                <button className="btn" style={{ backgroundColor: '#A3C1DA', width: '100%' }} onClick={() => setSelectedSubCategory(subCategory.id)}>
+                            <div className="col-md-2 mb-3" key={subCategory.id}>
+                                <button className="btn" style={{ backgroundColor: `hsl(210, 70%, 80%)`, width: '100%' }} onClick={() => setSelectedSubCategory(subCategory.id)}>
                                     {subCategory.name}
                                 </button>
                             </div>
@@ -92,7 +115,7 @@ const Dashboard: React.FC = () => {
                         value={userInput}
                         onChange={(e) => setUserInput(e.target.value)}
                     />
-                    <button className="btn btn-primary mt-2" onClick={handlePromptSubmit}>Send</button> {/* צבע כחול */}
+                    <button className="btn btn-primary mt-2" onClick={handlePromptSubmit}>Send</button>
                 </div>
             )}
             {response && (
@@ -102,7 +125,7 @@ const Dashboard: React.FC = () => {
                 </div>
             )}
             <div className="mt-4">
-                <a href="/history" className="btn btn-info">View History</a>
+                <a href={`/user-history/${user.id}`} className="btn btn-info">View History</a>
             </div>
         </div>
     );

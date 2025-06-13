@@ -5,7 +5,7 @@ import Login from './Components/Login';
 import SignUp from './Components/SignUp';
 import Dashboard from './Components/Dashboard';
 import AdminDashboard from './Components/AdminDashboard';
-// import UserHistory from './Components/UserHistory';
+import UserHistory from './Components/UserHistory';
 
 const App: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const App: React.FC = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/AdminDashboard" element={<AdminDashboard />} />
-         {/* <Route path="/UserHistory" element={<UserHistory />} /> */}
+        <Route path="/user-history/:userId" element={<UserHistory />} />
       </Routes>
     </Router>
   );

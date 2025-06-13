@@ -2,9 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const UserHistory: React.FC<{ userId: string }> = ({ userId }) => {
+const UserHistory: React.FC = () => {
+    const { userId } = useParams<{ userId: string }>();
     const [history, setHistory] = useState<any[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -38,12 +39,22 @@ const UserHistory: React.FC<{ userId: string }> = ({ userId }) => {
             <h1 className="text-center mt-5">User History</h1>
             <ul className="list-group mt-4">
                 {history.map((item, index) => (
-                    <li key={index} className="list-group-item">{item}</li>
+                    <li key={index} className="list-group-item">
+                        <div className="d-flex justify-content-between">
+                            <span><strong>Question:</strong> {item.promptText}</span>
+                            <span className="text-muted">{new Date(item.createdAt).toLocaleString()}</span>
+                        </div>
+                        <div className="mt-2">
+                            <strong>AI Response:</strong> {item.response}
+                        </div>
+                    </li>
                 ))}
             </ul>
-            <button className="btn btn-primary mt-4" onClick={() => navigate(-1)}>
-                Back
-            </button>
+            <div className="d-flex justify-content-between mt-4">
+                <button className="btn btn-primary" style={{ backgroundColor: '#17a2b8', color: 'white' }} onClick={() => navigate(-1)}>
+                    Back to Dashboard
+                </button>
+            </div>
         </div>
     );
 };
