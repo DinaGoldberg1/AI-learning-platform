@@ -17,7 +17,6 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-// הוספת מדיניות CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
@@ -40,7 +39,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -49,7 +47,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// הוספת CORS לפני Authorization
 app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthorization();

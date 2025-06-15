@@ -32,10 +32,10 @@ namespace API.Controllers
             return Ok(prompt);
         }
 
-        [HttpPost("process prompt")]
-        public async Task<IActionResult> CreatePrompt([FromBody] PromptDTO promptDto, [FromQuery] int userId)
+        [HttpPost("process-prompt")]
+        public async Task<IActionResult> CreatePrompt([FromBody] PromptDTO promptDto)
         {
-            var response = await _promptService.ProcessPromptAsync(promptDto, userId);
+            var response = await _promptService.ProcessPromptAsync(promptDto);
             return Ok(response);
         }
 

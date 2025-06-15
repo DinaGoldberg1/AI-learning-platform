@@ -34,14 +34,6 @@ namespace DAL.Services
         {
             return await _context.Categories.FindAsync(id);
         }
-        //public async Task<List<SubCategoryDTO>> GetByCategoryIdAsync(int categoryId)
-        //{
-        //    var subCategories = await _context.SubCategories
-        //        .Where(sc => sc.CategoryId == categoryId)
-        //        .ToListAsync();
-
-        //    return _mapper.Map<List<SubCategoryDTO>>(subCategories);
-        //}
 
         public async Task UpdateAsync(Category category)
         {

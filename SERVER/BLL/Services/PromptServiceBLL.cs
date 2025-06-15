@@ -31,11 +31,10 @@ namespace BLL.Services
             var prompt = await _promptServiceDAL.GetByIdAsync(id);
             return prompt == null ? null : _mapper.Map<PromptDTO>(prompt);
         }
-
-        public async Task<string> ProcessPromptAsync(PromptDTO promptDto, int userId)
+        public async Task<string> ProcessPromptAsync(PromptDTO promptDto)
         {
             var prompt = _mapper.Map<Prompt>(promptDto);
-            prompt.UserId = userId;
+            prompt.UserId = promptDto.UserId;
             var response = await SendPromptToAI(promptDto.PromptText);
             prompt.Response = response;
 
