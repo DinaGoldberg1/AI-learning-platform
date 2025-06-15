@@ -66,12 +66,9 @@ namespace API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<UserDTO>> Login([FromBody] string userId)
+        public async Task<ActionResult<UserDTO>> Login([FromBody] UserDTO userDto)
         {
-            if (string.IsNullOrWhiteSpace(userId))
-                return BadRequest("UserId is required.");
-
-            var user = await _userService.GetByUserIdAsync(userId);
+            var user = await _userService.GetByNameAndPhoneAsync(userDto);
             if (user == null)
                 return Unauthorized("User not found.");
 
