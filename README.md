@@ -28,6 +28,12 @@ Ensure that Docker is installed on your machine. You can download it from:
 👉 [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 ### Step 3: Run the Database (PostgreSQL)
+
+#### Change the connection string in the Appsettings file and in MyDbContext (in DAL) file to be:
+```json
+"DefaultConnection": "Host=db;Port=5432;Database=AIPlatformData;Username=postgres;Password=data4195"
+```
+
 Navigate to the project directory and run the following command to start the PostgreSQL container:
 
 ```bash
@@ -42,7 +48,7 @@ docker-compose up -d
 ### Step 4: Configure Database Connection in C#
 #### 🧵 Connection String – Update as per the source
 
-#### If the C# code runs outside of Docker (e.g., from Visual Studio):
+#### If the C# code runs outside of Docker (e.g., from Visual Studio) change the connection strung to be:
 ```json
 "ConnectionStrings": {
   "DefaultConnection": "Host=localhost;Port=5432;Database=AIPlatformData;Username=postgres;Password=data4195"
